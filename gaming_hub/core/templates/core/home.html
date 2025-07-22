@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gaming Hub - Home</title>
+  <link rel="stylesheet" href="{% static 'core/css/home.css' %}">
+</head>
+<body>
+  <header class="header">
+    <div class="logo-name">
+      <!-- <img src="{% static 'core/images/logo.png' %}" alt="Logo" class="logo"> -->
+      <span class="site-name">Gaming Hub</span>
+    </div>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'games' %}">Games</a>
+        <a href="{% url 'contact' %}">Contact</a>
+      </div>
+      <div class="nav-right">
+        <input type="text" placeholder="Search..." class="search-box">
+        <a href="{% url 'login' %}" class="login-btn">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h1>Welcome to Gaming Hub</h1>
+    <p>Explore and enjoy trending games.</p>
+  </main>
+</body>
+</html>

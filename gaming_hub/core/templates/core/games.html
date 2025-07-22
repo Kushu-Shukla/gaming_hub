@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Games - Gaming Hub</title>
+  <link rel="stylesheet" href="{% static 'core/css/games.css' %}">
+</head>
+<body>
+  <h2>Available Games</h2>
+  <div class="game-container">
+    {% for game in games %}
+      <div class="game-card">
+        {% if game.image %}
+          <img src="{{ game.image.url }}" alt="{{ game.title }}">
+        {% endif %}
+        <h3>{{ game.title }}</h3>
+        <p><strong>Genre:</strong> {{ game.genre }}</p>
+        <p>{{ game.description }}</p>
+        <p><small>Released: {{ game.release_date }}</small></p>
+      </div>
+    {% empty %}
+      <p>No games available yet.</p>
+    {% endfor %}
+  </div>
+</body>
+</html>
